@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+# This is the init file used for adding os or pip packages to install lists.
+# It takes advantage of the built-in init-mods-package-install init script that comes with the baseimages.
+# If using this, we need to make sure we set this init as a dependency of init-mods-package-install so this one runs first
+
+if ! command -v puppet; then
+    echo "**** Adding puppet-master and its deps to package install lists ****"
+    echo "puppet-master" >> /mod-repo-packages-to-install.list
+else
+    echo "**** puppet-master already installed, skipping ****"
+fi

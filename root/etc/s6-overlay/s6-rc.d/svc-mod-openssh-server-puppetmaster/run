@@ -4,4 +4,4 @@
 # It depends on init-services, the baseimage hook for start of all longrun services
 
 exec \
-    /usr/bin/puppet master
+    /usr/bin/puppet master --no-daemonize
